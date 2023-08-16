@@ -13,7 +13,7 @@ let j = 2.7;
 let k = 16;
 let l = true;
 let m = false;
-console.log(`${a} ${b} ${c} ${d} ${e} ${f} ${g} ${h} ${i} ${g} ${k} ${l} ${m}`);
+console.log(a, b, c, d, e, f, g, h, i, g, k, l, m);
 }
 // ======================================= TASK 2 ================================================ //
 
@@ -36,7 +36,7 @@ console.log (typeof c);
 {
     let firstName = prompt('Enter your firstName');
     let lastName = prompt('Enter your lastName');
-    let age = prompt('Enter your age');
+    let age = +prompt('Enter your age');
     let person = `${firstName} ${lastName} ${age}`;
     console.log (person);
 }
