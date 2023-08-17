@@ -118,7 +118,7 @@ switch (dayOfWeek) {
         console.log('Sunday');
         break;
 }
-// document.getElementById('button').onclick = function () {
+//     document.getElementById('button').onclick = function () {
 //     let dayOfWeek = +document.getElementById('dayOfWeek').value;
 //     switch (dayOfWeek) {
 //         case 1:
