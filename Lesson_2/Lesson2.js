@@ -22,8 +22,8 @@ let book3 = {title: 'TomasSoer', pageCount: 420, genre: 'artistic'};
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
 let book4 = {title: 'HarryPotter', pageCount: 380, genre: 'fantasy', authors: [{name:'name', age:34}]};
-let book5 = {title: 'Astral', pageCount: 290, genre: 'horror', authors: {name:'name', age:34}};
-let book6 = {title: 'TomasSoer', pageCount: 420, genre: 'artistic', authors: {name:'name', age:34}};
+let book5 = {title: 'Astral', pageCount: 290, genre: 'horror', authors: [{name:'name', age:34}]};
+let book6 = {title: 'TomasSoer', pageCount: 420, genre: 'artistic', authors: [{name:'name', age:34}]};
 
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 let users = [
