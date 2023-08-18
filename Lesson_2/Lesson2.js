@@ -16,14 +16,50 @@ console.log(arr[9]);
 // }
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
-let book1 = {title: 'HarryPotter', pageCount: 380, genre: 'fantasy'};
-let book2 = {title: 'Astral', pageCount: 290, genre: 'horror'};
-let book3 = {title: 'TomasSoer', pageCount: 420, genre: 'artistic'};
+let book1 = {
+    title: 'HarryPotter',
+    pageCount: 380,
+    genre: 'fantasy'
+};
+let book2 = {
+    title: 'Astral',
+    pageCount: 290,
+    genre: 'horror'
+};
+let book3 = {
+    title: 'TomasSoer',
+    pageCount: 420,
+    genre: 'artistic'
+};
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
-let book4 = {title: 'HarryPotter', pageCount: 380, genre: 'fantasy', authors: [{name:'name', age:34}]};
-let book5 = {title: 'Astral', pageCount: 290, genre: 'horror', authors: [{name:'name', age:34}]};
-let book6 = {title: 'TomasSoer', pageCount: 420, genre: 'artistic', authors: [{name:'name', age:34}]};
+let book4 = {
+    title: 'HarryPotter',
+    pageCount: 380,
+    genre: 'fantasy',
+    authors: [
+        {name: 'Author name', age: 34},
+        {name: 'Author name', age: 34}
+    ]
+};
+let book5 = {
+    title: 'Astral',
+    pageCount: 290,
+    genre: 'horror',
+    authors: [
+        {name: 'Author name', age: 34},
+        {name: 'Author name', age: 34}
+    ]
+};
+let book6 = {
+    title: 'TomasSoer',
+    pageCount: 420,
+    genre: 'artistic',
+    authors: [
+        {name: 'Author name', age: 34},
+        {name: 'Author name', age: 34}
+    ]
+};
 
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 let users = [
@@ -55,11 +91,13 @@ console.log(users[9].password);
 
 // Логічні розгалуження:
 // - Є змінна х, якій ви надаєте довільне числове значення. Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
-{
-    let x = 1;
-    checkX = x !== 0 ? 'Вірно' : 'Невірно';
-    console.log(checkX);
-}
+let x;
+x = 1;
+console.log(x !== 0 ? 'Вірно' : 'Невірно');
+x = 0;
+console.log(x !== 0 ? 'Вірно' : 'Невірно');
+x = -3;
+console.log(x !== 0 ? 'Вірно' : 'Невірно');
 // let arrX = [1, 0, -3];
 // for (let i = 0; i < arrX.length; i++) {
 //     if (arrX[i] !== 0) {
@@ -168,8 +206,8 @@ if (number1 > number2) {
 }
 
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який, за допомогою  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
-let x = '';
-if (x==='' || x===null || x===undefined || x===0 || x===false){
+x = '';
+if (x === '' || x === null || x === undefined || x === 0 || x === false) {
     x = 'default'
 }
 console.log(x);
