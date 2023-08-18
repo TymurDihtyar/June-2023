@@ -173,6 +173,9 @@ if (x==='' || x===null || x===undefined || x===0 || x===false){
     x = 'default'
 }
 console.log(x);
+// let x = 0;
+// x = x || "default";
+// console.log(x);
 
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 let coursesAndDurationArray = [
