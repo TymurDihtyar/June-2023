@@ -21,9 +21,9 @@ let book2 = {title: 'Astral', pageCount: 290, genre: 'horror'};
 let book3 = {title: 'TomasSoer', pageCount: 420, genre: 'artistic'};
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
-let book4 = {title: 'HarryPotter', pageCount: 380, genre: 'fantasy', authors: ['name', 34]};
-let book5 = {title: 'Astral', pageCount: 290, genre: 'horror', authors: ['name', 36]};
-let book6 = {title: 'TomasSoer', pageCount: 420, genre: 'artistic', authors: ['name', 45]};
+let book4 = {title: 'HarryPotter', pageCount: 380, genre: 'fantasy', authors: [{name:'name', age:34}]};
+let book5 = {title: 'Astral', pageCount: 290, genre: 'horror', authors: {name:'name', age:34}};
+let book6 = {title: 'TomasSoer', pageCount: 420, genre: 'artistic', authors: {name:'name', age:34}};
 
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 let users = [
@@ -117,6 +117,8 @@ switch (dayOfWeek) {
     case 7:
         console.log('Sunday');
         break;
+    default :
+        console.log('enter day of week');
 }
 //     document.getElementById('button').onclick = function () {
 //     let dayOfWeek = +document.getElementById('dayOfWeek').value;
@@ -166,9 +168,11 @@ if (number1 > number2) {
 }
 
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який, за допомогою  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
-let x = ""
-let y = x || "default";
-console.log(y);
+let x = '';
+if (x==='' || x===null || x===undefined || x===0 || x===false){
+    x = 'default'
+}
+console.log(x);
 
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 let coursesAndDurationArray = [
