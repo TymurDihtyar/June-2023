@@ -158,39 +158,39 @@ switch (dayOfWeek) {
     default :
         console.log('enter day of week');
 }
-//     document.getElementById('button').onclick = function () {
-//     let dayOfWeek = +document.getElementById('dayOfWeek').value;
-//     switch (dayOfWeek) {
-//         case 1:
-//             document.getElementById('plan').innerHTML = 'Пракрика1 JS';
-//             console.log('Пракрика1 JS');
-//             break;
-//         case 2:
-//             document.getElementById('plan').innerHTML = 'Лекція1 JS';
-//             console.log('Лекція1 JS');
-//             break;
-//         case 3:
-//             document.getElementById('plan').innerHTML = 'Пракрика2 JS';
-//             console.log('Пракрика2 JS');
-//             break;
-//         case 4:
-//             document.getElementById('plan').innerHTML = 'Лекція2 JS';
-//             console.log('Лекція2 JS');
-//             break;
-//         case 5:
-//             document.getElementById('plan').innerHTML = 'Додаткове JS';
-//             console.log('Додаткове JS');
-//             break;
-//         case 6:
-//             document.getElementById('plan').innerHTML = 'Англійська';
-//             console.log('Англійська');
-//             break;
-//         case 7:
-//             document.getElementById('plan').innerHTML = 'Відпочинок';
-//             console.log('Відпочинок');
-//             break;
-//     }
-// }
+    document.getElementById('button').onclick = function () {
+    let dayOfWeek = +document.getElementById('dayOfWeek').value;
+    switch (dayOfWeek) {
+        case 1:
+            document.getElementById('plan').innerHTML = 'Пракрика1 JS';
+            console.log('Пракрика1 JS');
+            break;
+        case 2:
+            document.getElementById('plan').innerHTML = 'Лекція1 JS';
+            console.log('Лекція1 JS');
+            break;
+        case 3:
+            document.getElementById('plan').innerHTML = 'Пракрика2 JS';
+            console.log('Пракрика2 JS');
+            break;
+        case 4:
+            document.getElementById('plan').innerHTML = 'Лекція2 JS';
+            console.log('Лекція2 JS');
+            break;
+        case 5:
+            document.getElementById('plan').innerHTML = 'Додаткове JS';
+            console.log('Додаткове JS');
+            break;
+        case 6:
+            document.getElementById('plan').innerHTML = 'Англійська';
+            console.log('Англійська');
+            break;
+        case 7:
+            document.getElementById('plan').innerHTML = 'Відпочинок';
+            console.log('Відпочинок');
+            break;
+    }
+}
 
 // - Користувач вводить або має два числа. Потрібно знайти та вивести максимальне число з тих двох. Також потрібно врахувати коли введені рівні числа.
 let number1 = Math.ceil(Math.random() * 1000);
@@ -204,6 +204,11 @@ if (number1 > number2) {
 } else if (number1 === number2) {
     console.log('Числа рівні', number1, number2);
 }
+
+// const firstUserNum = +prompt('Введіть перше число') || 100;
+// const secondUserNum = +prompt('Введіть друге число') || 50;
+// firstUserNum === secondUserNum ? console.log('Числа рівні') :
+//     firstUserNum < secondUserNum ? console.log('Друге число більше') : console.log('Перше число більше');
 
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який, за допомогою  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
 x = '';
@@ -245,5 +250,10 @@ if (coursesAndDurationArray[5].monthDuration > 5) {
 // for (let i = 0; i < coursesAndDurationArray.length; i++) {
 //     if (coursesAndDurationArray[i].monthDuration > 5) {
 //         console.log(`${coursesAndDurationArray[i].title}: Супер`);
+//     }
+// }
+// for (const course of coursesAndDurationArray) {
+//     if (course.monthDuration > 5) {
+//         console.log(`${course.title}: Супер`);
 //     }
 // }
