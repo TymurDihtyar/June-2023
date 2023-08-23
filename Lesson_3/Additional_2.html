@@ -293,16 +293,17 @@
 
     document.write(`<div class="users-box">`);
     for (let usersListElement of usersList) {
-        document.write(`<div class="user-block">`);
-        document.write(`<h2>${usersListElement.id} - ${usersListElement.name} - ${usersListElement.username}</h2>`);
-        document.write(`<h3>${usersListElement.email} - ${usersListElement.phone} </h3>`);
-        document.write(`<div class="address-block">`);
-        document.write(`<p>City - ${usersListElement.address.city}</p>`);
-        document.write(`<p>Street - ${usersListElement.address.street}</p>`);
-        document.write(`<p>Suite - ${usersListElement.address.suite}</p>`);
-        document.write(`<p>Zip code - ${usersListElement.address.zipcode}</p>`);
-        document.write(`</div>`);
-        document.write(`</div>`);
+        document.write(`
+        <div class="user-block">
+            <h2>${usersListElement.id} - ${usersListElement.name} - ${usersListElement.username}</h2>
+            <h3>${usersListElement.email} - ${usersListElement.phone} </h3>
+            <div class="address-block">
+                <p>City - ${usersListElement.address.city}</p>
+                <p>Street - ${usersListElement.address.street}</p>
+                <p>Suite - ${usersListElement.address.suite}</p>
+                <p>Zip code - ${usersListElement.address.zipcode}</p>
+            </div>
+        </div>`);
     }
     document.write(`</div>`);
 
