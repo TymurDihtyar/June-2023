@@ -76,6 +76,7 @@ for (let i = 0; i < array5.length; i++) {
 }
 console.log('==============================');
 
+
 // 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
 let array6 = [100, 250, 50, 168, 120, 345, 188];
 let sum = 0;
@@ -97,25 +98,32 @@ console.log('============array7 рандом*5==================');
 console.log(array7_1);
 console.log(array7_2);
 
+
 // 8. Створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо елемент є числом - додати його в інший масив.
-//
-//
-//
+let array8_1 = [false, 'dfgdf', 354, true, 'sdfsf', 6754, false, '6sdfsf0', true, 123];
+let array8_2 = [];
+for (const array8Element of array8_1) {
+    if (typeof (array8Element) === 'number') {
+        array8_2[array8_2.length] = array8Element;
+    }
+}
+console.log(array8_2);
+
 // - Дано 2 масиви з рівною кількістю об'єктів.
 // Масиви:
-//     let usersWithId = [
-//         {id: 1, name: 'vasya', age: 31, status: false},
-//         {id: 2, name: 'petya', age: 30, status: true},
-//         {id: 3, name: 'kolya', age: 29, status: true},
-//         {id: 4, name: 'olya', age: 28, status: false}
-//     ];
-//
-// let citiesWithId = [
-//     {user_id: 3, country: 'USA', city: 'Portland'},
-//     {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-//     {user_id: 2, country: 'Poland', city: 'Krakow'},
-//     {user_id: 4, country: 'USA', city: 'Miami'}
-// ];
+let usersWithId = [
+    {id: 1, name: 'vasya', age: 31, status: false},
+    {id: 2, name: 'petya', age: 30, status: true},
+    {id: 3, name: 'kolya', age: 29, status: true},
+    {id: 4, name: 'olya', age: 28, status: false}
+];
+
+let citiesWithId = [
+    {user_id: 3, country: 'USA', city: 'Portland'},
+    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+    {user_id: 2, country: 'Poland', city: 'Krakow'},
+    {user_id: 4, country: 'USA', city: 'Miami'}
+];
 //
 // З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
 //     Записати цей об'єкт в новий масив
