@@ -246,9 +246,9 @@ let books = [
 ];
 // -знайти наібльшу книжку.
 let largestBook = books[0];
-for (let k = 0; k < books.length; k++) {
-    if (books[k].pageCount > largestBook.pageCount){
-        largestBook = books[k];
+for (let i = 0; i < books.length; i++) {
+    if (books[i].pageCount > largestBook.pageCount){
+        largestBook = books[i];
     }
 }
 console.log("Найбільша книга:", largestBook);
