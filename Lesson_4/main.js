@@ -43,13 +43,13 @@ let users = [
     {name: 'max', age: 31, status: true}
 ];
 
-function printArrElement(array) {
+function PrintArrElement(array) {
     for (const arrayElement of array) {
         console.log(arrayElement);
     }
 }
 
-printArrElement(users);
+PrintArrElement(users);
 
 //=============================================================================================//
 
