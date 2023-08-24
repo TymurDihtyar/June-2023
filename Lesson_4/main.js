@@ -182,12 +182,8 @@ function Exchange(sumUAH, currencyValues, exchangeCurrency) {
         }
     }
 
-    if (Value === undefined) {
-        return "Невідома валюта";
-    }
-
     return sumUAH / Value;
 }
 
-let convertedSum = Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'EUR', value: 42}], 'EUR')
+let convertedSum = Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'PL', value: 8}], 'PL')
 console.log(convertedSum);
