@@ -80,7 +80,7 @@ function PrintUl2(text, numOfLi) {
     document.write(`</ul>`)
 }
 
-PrintUl2('loremdsfsdfsewrwrwer', 3);
+PrintUl2('loremlorem', 3);
 
 //=============================================================================================//
 
