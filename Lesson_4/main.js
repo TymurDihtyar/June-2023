@@ -157,33 +157,38 @@ console.log(sumOfNumber);
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 // let mass = [false, 'dfgdf', 354, true, 'sdfsf', 6754, false, '6sdfsf0', true, 123];
+
+// function Swap(arr, index1, index2) {
+//     let temporary = arr[index1];
+//     arr[index1] = arr[index2];
+//     arr[index2] = temporary;
+//     return arr;
+// }
+// [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
 function Swap(arr, index1, index2) {
-    let temporary = arr[index1];
+    arr.push(arr[index1])
     arr[index1] = arr[index2];
-    arr[index2] = temporary;
+    arr[index2] =  arr[arr.length-1];
+    arr.pop()
     return arr;
 }
 
-let newArr = Swap(mass, 0, 5);
+let newArr = Swap(mass, 1, 4);
 console.log(newArr);
+
 
 //=============================================================================================//
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 function Exchange(sumUAH, currencyValues, exchangeCurrency) {
-
-    let Value;
-
     for (const currencyValue of currencyValues) {
         if (currencyValue.currency === exchangeCurrency) {
-            Value = currencyValue.value;
-            break;
+            return sumUAH / currencyValue.value;
         }
     }
-
-    return sumUAH / Value;
+    return console.log('невірна валюта');
 }
 
-let convertedSum = Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'PL', value: 8}], 'PL')
+let convertedSum = Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'PL', value: 8}], 'USD')
 console.log(convertedSum);
