@@ -19,12 +19,12 @@ console.log('Area Of Circle:', Circle);
 //=============================================================================================//
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-function AreaOfСylinder(h, r) {
+function AreaOfCilinder(h, r) {
     return 3.14 * Math.pow(r, 2) * h;
 }
 
-let Cylinder = AreaOfСylinder(3, 2);
-console.log('Area Of Сylinder:', Cylinder);
+let Cylinder = AreaOfCilinder(3, 2);
+console.log('Area Of Сilinder:', Cylinder);
 
 //=============================================================================================//
 
@@ -40,7 +40,7 @@ let users = [
     {name: 'andrey', age: 29, status: true},
     {name: 'masha', age: 30, status: true},
     {name: 'olya', age: 31, status: false},
-    {name: 'max', age: 31, status: true}
+    {name: 'max', age: 31, status: false}
 ];
 
 function PrintArrElement(array) {
