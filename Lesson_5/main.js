@@ -10,7 +10,7 @@ console.log('Perimeter Rectangle:', rectangle(10, 20));
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 let Circle = (r) => Math.PI * Math.pow(r, 2);
 
-console.log('Area Of Circle:', Circle (2));
+console.log('Area Of Circle:', Circle(2));
 
 //=============================================================================================//
 
@@ -157,7 +157,7 @@ console.log(SumOfNumberArr(arrayRandom));
 //     return arr;
 // }
 //
-const Swap=(arr, index1, index2)=> {
+const Swap = (arr, index1, index2) => {
     [arr[index1], arr[index2]] = [arr[index2], arr[index1]]
     return arr;
 }
@@ -178,4 +178,7 @@ const Exchange = (sumUAH, currencyValues, exchangeCurrency) => {
     return console.log('невірна валюта');
 }
 
-console.log(Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'PL', value: 8}], 'USD'));
+console.log(Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {
+    currency: 'PL',
+    value: 8
+}], 'USD'));
