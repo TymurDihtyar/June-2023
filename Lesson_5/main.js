@@ -178,7 +178,4 @@ const Exchange = (sumUAH, currencyValues, exchangeCurrency) => {
     return console.log('невірна валюта');
 }
 
-console.log(Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {
-    currency: 'PL',
-    value: 8
-}], 'USD'));
+console.log(Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'PL', value: 8}], 'USD'));
