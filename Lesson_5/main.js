@@ -1,30 +1,24 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
-function PerimeterRectangle(a, b) {
+let rectangle = (a, b) => {
     return a * b;
 }
-
-let rectangle = PerimeterRectangle(10, 20);
-console.log('Perimeter Rectangle:', rectangle);
+// let rectangle = (a, b) => a * b;
+console.log('Perimeter Rectangle:', rectangle(10, 20));
 
 //=============================================================================================//
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
-function AreaOfCircle(r) {
-    return 3.14 * Math.pow(r, 2);
-}
+let Circle = (r) => Math.PI * Math.pow(r, 2);
 
-let Circle = AreaOfCircle(2);
-console.log('Area Of Circle:', Circle);
+console.log('Area Of Circle:', Circle (2));
 
 //=============================================================================================//
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-function AreaOfCilinder(h, r) {
-    return 3.14 * Math.pow(r, 2) * h;
+let Cylinder = (h, r) => {
+    return Math.PI * Math.pow(r, 2) * h;
 }
-
-let Cylinder = AreaOfCilinder(3, 2);
-console.log('Area Of Сilinder:', Cylinder);
+console.log('Area Of Сilinder:', Cylinder(3, 2));
 
 //=============================================================================================//
 
@@ -43,7 +37,7 @@ let users = [
     {name: 'max', age: 35, status: false}
 ];
 
-function PrintArrElement(array) {
+let PrintArrElement = (array) => {
     for (const arrayElement of array) {
         console.log(arrayElement);
     }
@@ -54,25 +48,25 @@ PrintArrElement(users);
 //=============================================================================================//
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-function PrintText(text) {
+let PrintText = (text) => {
     document.write(`<p>${text}</p>`)
 }
 
-PrintText('loremdsfsdfsewrwrwer');
+PrintText('loremd');
 
 //=============================================================================================//
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-function PrintUl1(text) {
+const PrintUl1 = (text) => {
     document.write(`<ul><li>${text}</li><li>${text}</li><li>${text}</li></ul>`);
 }
 
-PrintUl1('loremdsfsdfsewrwrwer');
+PrintUl1('loremds2222');
 
 //=============================================================================================//
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
-function PrintUl2(text, numOfLi) {
+const PrintUl2 = (text, numOfLi) => {
     document.write(`<ul>`)
     for (let i = 0; i < numOfLi; i++) {
         document.write(`<li>${text}</li>`)
@@ -80,14 +74,14 @@ function PrintUl2(text, numOfLi) {
     document.write(`</ul>`)
 }
 
-PrintUl2('loremlorem', 3);
+PrintUl2('loremlorem3', 3);
 
 //=============================================================================================//
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 let mass = [false, 'dfgdf', 354, true, 'sdfsf', 6754, false, '6sdfsf0', true, 123];
 
-function PrintUl3(array) {
+const PrintUl3 = (array) => {
     document.write(`<ul>`)
     for (let i = 0; i < array.length; i++) {
         document.write(`<li>${array[i]}</li>`)
@@ -107,7 +101,7 @@ let usersWithId = [
     {id: 4, name: 'olya', age: 28}
 ];
 
-function PrintUser(array) {
+const PrintUser = (array) => {
     for (let i = 0; i < array.length; i++) {
         document.write(`<hr><div>ID:${array[i].id}<br>Name:${array[i].name}<br>Age: ${array[i].age}</div><hr>`)
     }
@@ -125,7 +119,7 @@ for (let i = 0; i < 20; i++) {
 
 console.log(arrayRandom);
 
-function MinNumber(array) {
+const MinNumber = (array) => {
     let minNumberArr = array[0];
     for (const Element of array) {
         if (minNumberArr > Element) {
@@ -135,13 +129,12 @@ function MinNumber(array) {
     return minNumberArr;
 }
 
-let minNumberArr = MinNumber(arrayRandom);
-console.log(minNumberArr);
+console.log(MinNumber(arrayRandom));
 
 //=============================================================================================//
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-function SumOfNumberArr(array) {
+const SumOfNumberArr = (array) => {
     let sum = 0
     for (const arrayElement of array) {
         sum += arrayElement;
@@ -149,8 +142,7 @@ function SumOfNumberArr(array) {
     return sum;
 }
 
-let sumOfNumber = SumOfNumberArr(arrayRandom);
-console.log(sumOfNumber);
+console.log(SumOfNumberArr(arrayRandom));
 
 //=============================================================================================//
 
@@ -164,24 +156,20 @@ console.log(sumOfNumber);
 //     arr[index2] = temporary;
 //     return arr;
 // }
-// [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
-function Swap(arr, index1, index2) {
-    arr.push(arr[index1])
-    arr[index1] = arr[index2];
-    arr[index2] =  arr[arr.length-1];
-    arr.pop()
+//
+const Swap=(arr, index1, index2)=> {
+    [arr[index1], arr[index2]] = [arr[index2], arr[index1]]
     return arr;
 }
 
-let newArr = Swap(mass, 1, 4);
-console.log(newArr);
+console.log(Swap(mass, 1, 4));
 
 
 //=============================================================================================//
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
-function Exchange(sumUAH, currencyValues, exchangeCurrency) {
+const Exchange = (sumUAH, currencyValues, exchangeCurrency) => {
     for (const currencyValue of currencyValues) {
         if (currencyValue.currency === exchangeCurrency) {
             return sumUAH / currencyValue.value;
@@ -190,5 +178,4 @@ function Exchange(sumUAH, currencyValues, exchangeCurrency) {
     return console.log('невірна валюта');
 }
 
-let convertedSum = Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'PL', value: 8}], 'USD')
-console.log(convertedSum);
+console.log(Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'PL', value: 8}], 'USD'));
