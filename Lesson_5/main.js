@@ -178,4 +178,73 @@ const Exchange = (sumUAH, currencyValues, exchangeCurrency) => {
     return console.log('невірна валюта');
 }
 
-console.log(Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {currency: 'PL', value: 8}], 'USD'));
+console.log(Exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}, {
+    currency: 'PL',
+    value: 8
+}], 'USD'));
+
+//=============================================================================================//
+
+// - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
+array = [1, 2, 3, 4, 5, 7, 8];
+const ser = (array) => {
+    let sum = 0;
+    for (const arrayElement of array) {
+        sum += arrayElement;
+    }
+    return sum / 2;
+}
+console.log(ser(array));
+
+//=============================================================================================//
+
+// - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
+const minValue = (...args) => {
+    let max = args[0];
+    let min = args[0];
+    for (const arg of args) {
+        if (arg < min) {
+            min = arg;
+        }
+        if (arg > max) {
+            max = arg;
+        }
+    }
+    console.log(`Максимум `, max);
+    return min;
+}
+console.log(`Мінімум `, minValue(10, 2, 3, 4, 5, 6, 7, 8, 9, -6));
+
+//=============================================================================================//
+
+// - створити функцію яка заповнює масив рандомними числами
+// (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
+const randomArray = (numberOfElements) => {
+    let array = [];
+    for (let i = 0; i < numberOfElements; i++) {
+        array[array.length] = Math.round(Math.random() * 100);
+    }
+    return array;
+}
+console.log(randomArray(5));
+
+//=============================================================================================//
+
+// - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
+
+// const randomArray = (numberOfElements)=>{
+//     let array = [];
+//     for (let i = 0; i < numberOfElements; i++) {
+//         array[array.length] = Math.round(Math.random()*100);
+//     }
+//     return array;
+// }
+// console.log(randomArray(5));
+
+//=============================================================================================//
+
+// - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
+
+const reverse = (array) => array.reverse()
+
+console.log(reverse(array));
