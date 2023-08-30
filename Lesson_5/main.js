@@ -219,27 +219,27 @@ console.log(`Мінімум `, minValue(10, 2, 3, 4, 5, 6, 7, 8, 9, -6));
 
 // - створити функцію яка заповнює масив рандомними числами
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
-const randomArray = (numberOfElements) => {
-    let array = [];
-    for (let i = 0; i < numberOfElements; i++) {
-        array[array.length] = Math.round(Math.random() * 100);
+const randomArray = () => {
+    let arrayRandom = [];
+    for (let i = 0; i < 20; i++) {
+        arrayRandom[i] = Math.ceil(Math.random() * 100);
     }
-    return array;
+    return arrayRandom;
 }
-console.log(randomArray(5));
+console.log(randomArray());
 
 //=============================================================================================//
 
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
 
-// const randomArray = (numberOfElements)=>{
-//     let array = [];
-//     for (let i = 0; i < numberOfElements; i++) {
-//         array[array.length] = Math.round(Math.random()*100);
-//     }
-//     return array;
-// }
-// console.log(randomArray(5));
+const randomArray2 = (numberOfElements)=>{
+    let array = [];
+    for (let i = 0; i < numberOfElements; i++) {
+        array[array.length] = Math.round(Math.random()*100);
+    }
+    return array;
+}
+console.log(randomArray2(5));
 
 //=============================================================================================//
 
