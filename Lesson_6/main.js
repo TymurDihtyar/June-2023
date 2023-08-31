@@ -179,7 +179,8 @@ console.log(pockedDesk);
 
 //===================================================================================================================================================================//
 // взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
-let coursesArray = [{
+let coursesArray = [
+    {
     title: 'JavaScript Complex',
     monthDuration: 5,
     hourDuration: 909,
