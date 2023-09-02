@@ -256,10 +256,9 @@ console.log(dockerArr);
 let strStr = 'насолода';
 let slicer = (text, num) => {
     let result = [];
-    for (let i = 0; i < text.length; i+=num) {
-        result.push(text.slice(i, i+num))
+    for (let i = 0; i < text.length; i += num) {
+        result.push(text.slice(i, i + num))
     }
-
     return result
 }
 console.log(slicer(strStr, 2));
@@ -267,28 +266,38 @@ console.log(slicer(strStr, 2));
 
 //===================================================================================================================================================================//
 // Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
-//     let str = 'Кожний охотнік бажає знати де сидить фазан';
+let stringi = 'Кожний охотнік бажає знати де сидить фазан';
 // document.writeln(delete_characters(str, 7)); // Кожний
-
+let delete_characters = (string, numOfSymbol) => string.slice(0, numOfSymbol);
+console.log(delete_characters(stringi, 7));
 
 //===================================================================================================================================================================//
 // Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами. При цьому всі символи рядка необхідно перевести у верхній регістр.
-//     let str = "HTML JavaScript PHP";
+let stringi2 = "HTML JavaScript PHP";
 // document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
-
+const insert_dash = string => string.toUpperCase().replaceAll(" ", "-");
+console.log(insert_dash(stringi2));
 
 //===================================================================================================================================================================//
 // Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка з нижнього регістру у верхній.
-// // let a = 'vaisa'; // Vasia
-
+let a = 'vaisa'; // Vasia
+const toUpper = string => string.charAt(0).toUpperCase() + string.slice(1);
+console.log(toUpper(a));
 
 //===================================================================================================================================================================//
 //  Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
-//  let symb = "о", str = "Астрономія це наука про космос";
+let symb = "о", stringi3 = "Астрономія це наука про космос";
 // document.writeln(count(str, symb)) // 5 - символів о
-
+const count = (string, stringsearch) => {
+    let accum = 0;
+    for (const stringElement of string) {(stringElement === stringsearch) ? accum++ : accum;}
+    return accum;
+}
+console.log(count(stringi3, symb));
 
 //===================================================================================================================================================================//
 // Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
-//     let str = "Привіт світ, це Hello World";
+let stringi4 = "Привіт світ, це Hello World";
 // document.writeln(cutString(str, 3)) // "Привіт світ, це"
+const cutString = (sting, num) => sting.split(' ').slice(0, num).join(' ');
+console.log(cutString(stringi4, 3));
