@@ -153,7 +153,7 @@ let values = ['6', '7', '8', '9', '10', 'ace', 'jack', 'queen', 'king'];
 let desk = cardSuits.reduce((acc, cardSuit) => {
     values.forEach(value => {
         let color = (cardSuit === 'diamond' || cardSuit === 'heart') ? 'red' : 'black';
-        acc.push({ cardSuit, value, color });
+        acc.push({cardSuit: cardSuit, value: value, color: color});
     });
     return acc;
 }, []);
@@ -178,9 +178,10 @@ let allDimomds = desk.filter(card => card.cardSuit === 'diamond')
 console.log(allDimomds);
 
 // - знайти всі трефи від 9 та більше
-let allClubsGreater9 = desk.filter(card => card.cardSuit === 'clubs' && (card.value === '10' || card.value === 'jack' || card.value === 'queen' || card.value === 'king' || card.value === 'ace'))
+let allClubsGreater9 = desk.filter(card => card.cardSuit === 'clubs' && values.slice(3, 9).includes(card.value))
 console.log(allClubsGreater9);
 
+// (card.value === '9' || card.value === '10' || card.value === 'jack' || card.value === 'queen' || card.value === 'king' || card.value === 'ace')
 // ===================================================================================================================================================================//
 //     Взяти описану колоду карт, та за допомогою reduce упакувати всі карти по "мастях" в об'єкт
 // {
@@ -246,3 +247,48 @@ console.log(cssArr);
 // --написати пошук всіх об'єктів, в який в modules є docker
 let dockerArr = coursesArray.filter(curs => curs.modules.includes('docker'))
 console.log(dockerArr);
+
+
+//======================================================== ДОДАТКОВЕ ===========================================================================================================//
+
+// Напишіть функцію cutString(str, n), яка ділить строку на підрядок, яка будується з n символів.
+// document.writeln(cutString('насолода',3)) // [нас,оло,да]
+let strStr = 'насолода';
+let slicer = (text, num) => {
+    let result = [];
+    for (let i = 0; i < text.length; i+=num) {
+        result.push(text.slice(i, i+num))
+    }
+
+    return result
+}
+console.log(slicer(strStr, 2));
+
+
+//===================================================================================================================================================================//
+// Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
+//     let str = 'Кожний охотнік бажає знати де сидить фазан';
+// document.writeln(delete_characters(str, 7)); // Кожний
+
+
+//===================================================================================================================================================================//
+// Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами. При цьому всі символи рядка необхідно перевести у верхній регістр.
+//     let str = "HTML JavaScript PHP";
+// document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
+
+
+//===================================================================================================================================================================//
+// Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка з нижнього регістру у верхній.
+// // let a = 'vaisa'; // Vasia
+
+
+//===================================================================================================================================================================//
+//  Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
+//  let symb = "о", str = "Астрономія це наука про космос";
+// document.writeln(count(str, symb)) // 5 - символів о
+
+
+//===================================================================================================================================================================//
+// Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
+//     let str = "Привіт світ, це Hello World";
+// document.writeln(cutString(str, 3)) // "Привіт світ, це"
