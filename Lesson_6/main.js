@@ -254,7 +254,7 @@ console.log(dockerArr);
 // Напишіть функцію cutString(str, n), яка ділить строку на підрядок, яка будується з n символів.
 // document.writeln(cutString('насолода',3)) // [нас,оло,да]
 let strStr = 'насолода';
-let slicer = (text, num) => {
+const slicer = (text, num) => {
     let result = [];
     for (let i = 0; i < text.length; i += num) {
         result.push(text.slice(i, i + num))
@@ -268,7 +268,7 @@ console.log(slicer(strStr, 2));
 // Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
 let stringi = 'Кожний охотнік бажає знати де сидить фазан';
 // document.writeln(delete_characters(str, 7)); // Кожний
-let delete_characters = (string, numOfSymbol) => string.slice(0, numOfSymbol);
+const delete_characters = (string, numOfSymbol) => string.slice(0, numOfSymbol);
 console.log(delete_characters(stringi, 7));
 
 //===================================================================================================================================================================//
