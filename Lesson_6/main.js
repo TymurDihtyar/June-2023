@@ -240,8 +240,8 @@ let coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }];
 
-// --написати пошук всіх об'єктів, в який в modules є сss
-let cssArr = coursesArray.filter(curs => curs.modules.includes('css'))
+// --написати пошук всіх об'єктів, в який в modules є sass
+let cssArr = coursesArray.filter(curs => curs.modules.includes('sass'))
 console.log(cssArr);
 
 // --написати пошук всіх об'єктів, в який в modules є docker
