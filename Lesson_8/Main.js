@@ -105,8 +105,6 @@ console.log(classArray.sort((a, b) => a.order.length - b.order.length));
 // car1.addDriver({name: "Tymur", age: 33, statusLicence: true})
 // console.log(car1);
 
-//
-
 
 function Car(model, producer, year, maxSpeed, engineCapacity) {
     this.model = model;
@@ -150,9 +148,42 @@ car.addDriver('Tymur', 34, true)
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
+class NewCar {
+    constructor(model, producer, year, maxSpeed, engineCapacity) {
+        this.model = model;
+        this.producer = producer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.engineCapacity = engineCapacity;
+    }
 
+    drive () {
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    }
+    info () {
+        for (const argKey in this) {
+            console.log(`${argKey} - ${this[argKey]}`);
+        }
+    }
+    increaseMaxSpeed (newSpeed) {
+        this.maxSpeed += newSpeed;
+        console.log(`їдемо зі новою швидкістю ${this.maxSpeed} на годину`);
+    }
+    changeYear (newValue) {
+        this.year = newValue;
+    }
+    addDriver (name, age, statusLicence) {
+        this.driver = {name, age, statusLicence}
+    }
+}
 
-
+let carClass = new NewCar('308', 'pegot', 2018, 200,1.6)
+carClass.drive();
+carClass.info();
+carClass.increaseMaxSpeed(30);
+carClass.changeYear(2015)
+carClass.addDriver('Tymur', 34, true)
+console.log(carClass);
 
 
 
