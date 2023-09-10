@@ -214,12 +214,28 @@ sinderellas.push(new Sinderella('Sinderella_9', 42, 37));
 sinderellas.push(new Sinderella('Sinderella_10', 37, 32));
 console.log(sinderellas);
 
-function Prinse(name, age, findShose) {
-    this.name = name;
-    this.age = age;
-    this.findShose = findShose;
-    this.findSinderella = function (sinderellas) {
-        for (const sinderella of sinderellas) {
+// function Prinse(name, age, findShose) {
+//     this.name = name;
+//     this.age = age;
+//     this.findShose = findShose;
+//     this.findSinderella = function (sinderellas) {
+//         for (const sinderella of sinderellas) {
+//             if (sinderella.footSize === this.findShose) {
+//                 return console.log(`Заповітна принцеса: ${sinderella.name}`);
+//             }
+//         }
+//         return console.log(`Заповітної принцеси немає`)
+//     }
+// }
+
+class Prinse {
+    constructor(name, age, findShose) {
+        this.name = name;
+        this.age = age;
+        this.findShose = findShose;
+    }
+    findSinderella (people) {
+        for (const sinderella of people) {
             if (sinderella.footSize === this.findShose) {
                 return console.log(`Заповітна принцеса: ${sinderella.name}`);
             }
@@ -227,8 +243,10 @@ function Prinse(name, age, findShose) {
         return console.log(`Заповітної принцеси немає`)
     }
 }
-
     let prinse = new Prinse("Stefan", 26, 35);
     prinse.findSinderella(sinderellas)
 
-console.log(sinderellas.find(sinderella => sinderella.footSize === prinse.findShose));
+
+
+let find = sinderellas.find(sinderella => sinderella.footSize === prinse.findShose);
+    find ? console.log(`Заповітна принцеса: ${find.name}`) : console.log(`Заповітної принцеси немає`)
