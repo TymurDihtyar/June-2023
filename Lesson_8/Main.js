@@ -132,7 +132,7 @@ function Car(model, producer, year, maxSpeed, engineCapacity) {
     }
 }
 
-let car = new Car('i3', 'bmw', 2015, 350,2.0)
+let car = new Car('i3', 'bmw', 2015, 350, 2.0)
 car.drive();
 // car.info();
 car.increaseMaxSpeed(15);
@@ -157,27 +157,31 @@ class NewCar {
         this.engineCapacity = engineCapacity;
     }
 
-    drive () {
+    drive() {
         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
     }
-    info () {
+
+    info() {
         for (const argKey in this) {
             console.log(`${argKey} - ${this[argKey]}`);
         }
     }
-    increaseMaxSpeed (newSpeed) {
+
+    increaseMaxSpeed(newSpeed) {
         this.maxSpeed += newSpeed;
         console.log(`їдемо зі новою швидкістю ${this.maxSpeed} на годину`);
     }
-    changeYear (newValue) {
+
+    changeYear(newValue) {
         this.year = newValue;
     }
-    addDriver (name, age, statusLicence) {
+
+    addDriver(name, age, statusLicence) {
         this.driver = {name, age, statusLicence}
     }
 }
 
-let carClass = new NewCar('308', 'pegot', 2018, 200,1.6)
+let carClass = new NewCar('308', 'pegot', 2018, 200, 1.6)
 carClass.drive();
 carClass.info();
 carClass.increaseMaxSpeed(30);
@@ -186,11 +190,44 @@ carClass.addDriver('Tymur', 34, true)
 console.log(carClass);
 
 
-
-
-
-
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+
+function Sinderella(name, age, footSize) {
+    this.name = name;
+    this.age = age;
+    this.footSize = footSize;
+}
+
+let sinderellas = [];
+sinderellas.push(new Sinderella('Sinderella_1', 20, 31));
+sinderellas.push(new Sinderella('Sinderella_2', 24, 33));
+sinderellas.push(new Sinderella('Sinderella_3', 28, 34));
+sinderellas.push(new Sinderella('Sinderella_4', 45, 35));
+sinderellas.push(new Sinderella('Sinderella_5', 51, 39));
+sinderellas.push(new Sinderella('Sinderella_6', 18, 41));
+sinderellas.push(new Sinderella('Sinderella_7', 17, 45));
+sinderellas.push(new Sinderella('Sinderella_8', 35, 30));
+sinderellas.push(new Sinderella('Sinderella_9', 42, 37));
+sinderellas.push(new Sinderella('Sinderella_10', 37, 32));
+console.log(sinderellas);
+
+function Prinse(name, age, findShose) {
+    this.name = name;
+    this.age = age;
+    this.findShose = findShose;
+    this.findSinderella = function (sinderellas){
+        for (const sinderella of sinderellas) {
+            if (sinderella.footSize===this.findShose) {
+                return console.log(`Заповітна принцеса: ${sinderella.name}`);
+            }
+        }
+        return console.log(`Заповітної принцеси немає`)
+    }
+}
+let prinse = new Prinse("Stefan", 26, 35);
+prinse.findSinderella(sinderellas)
+
+console.log(sinderellas.find(sinderella => sinderella.footSize === prinse.findShose));
