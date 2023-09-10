@@ -218,16 +218,17 @@ function Prinse(name, age, findShose) {
     this.name = name;
     this.age = age;
     this.findShose = findShose;
-    this.findSinderella = function (sinderellas){
+    this.findSinderella = function (sinderellas) {
         for (const sinderella of sinderellas) {
-            if (sinderella.footSize===this.findShose) {
+            if (sinderella.footSize === this.findShose) {
                 return console.log(`Заповітна принцеса: ${sinderella.name}`);
             }
         }
         return console.log(`Заповітної принцеси немає`)
     }
 }
-let prinse = new Prinse("Stefan", 26, 35);
-prinse.findSinderella(sinderellas)
+
+    let prinse = new Prinse("Stefan", 26, 35);
+    prinse.findSinderella(sinderellas)
 
 console.log(sinderellas.find(sinderella => sinderella.footSize === prinse.findShose));
