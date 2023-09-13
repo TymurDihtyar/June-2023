@@ -134,7 +134,7 @@ function Car(model, producer, year, maxSpeed, engineCapacity) {
 
 let car = new Car('i3', 'bmw', 2015, 350, 2.0)
 car.drive();
-// car.info();
+car.info();
 car.increaseMaxSpeed(15);
 car.changeYear(2010)
 car.addDriver('Tymur', 34, true)
@@ -250,3 +250,8 @@ class Prinse {
 
 let find = sinderellas.find(sinderella => sinderella.footSize === prinse.findShose);
     find ? console.log(`Заповітна принцеса: ${find.name}`) : console.log(`Заповітної принцеси немає`)
+
+
+let str = 'okten';
+str.toUpperCase()
+console.log(str);
