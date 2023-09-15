@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sessions</title>
+    <style>
+        div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            background: #eaaf1d;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+
+    let div = document.createElement('div');
+    document.body.appendChild(div)
+
+    let time = JSON.parse(localStorage.getItem('usersDate'))
+    if (time === null) {
+        div.innerHTML = '<b>No one has visited the page</b>'
+    }else {
+        for (const timeElement of time) {
+            let p = document.createElement('p');
+            p.innerHTML = `<b>User visit site on:</b> ${timeElement}`
+            div.appendChild(p)
+        }
+    }
+
+
+</script>
+</body>
+</html>

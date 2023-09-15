@@ -1,0 +1,46 @@
+.target {
+    font-size: 40px;
+}
+
+.number, .number2, #text {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaaf1d;
+    font-size: 60px;
+}
+
+div {
+    width: 600px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #e85d3f;
+    font-size: 10px;
+}
+
+button, input {
+    height: 50px;
+    width: 300px;
+}
+
+table {
+    width: 90%;
+    height: 200px;
+    align-items: center;
+    font-size: 20px;
+}
+
+.tabelConteiner {
+    width: 100vw;
+    background: none;
+}
+
+.column {
+    border: 2px solid black;
+    text-align: center;
+}

@@ -67,14 +67,13 @@ console.log(sortNums(nums, 'ascending'));
 
 //===================================================================================================================================================================//
 // - є масив
-let coursesAndDurationArray = [
-    {title: 'JavaScript Complex', monthDuration: 5},
-    {title: 'Java Complex', monthDuration: 6},
-    {title: 'Python Complex', monthDuration: 6},
-    {title: 'QA Complex', monthDuration: 4},
-    {title: 'FullStack', monthDuration: 7},
-    {title: 'Frontend', monthDuration: 4}
-];
+let coursesAndDurationArray = [{title: 'JavaScript Complex', monthDuration: 5}, {
+    title: 'Java Complex',
+    monthDuration: 6
+}, {title: 'Python Complex', monthDuration: 6}, {title: 'QA Complex', monthDuration: 4}, {
+    title: 'FullStack',
+    monthDuration: 7
+}, {title: 'Frontend', monthDuration: 4}];
 // -- відсортувати його за спаданням за monthDuration
 console.log(coursesAndDurationArray.sort((a, b) => b.monthDuration - a.monthDuration));
 
@@ -207,38 +206,37 @@ console.log(pockedDesk);
 
 //===================================================================================================================================================================//
 // взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
-let coursesArray = [
-    {
-        title: 'JavaScript Complex',
-        monthDuration: 5,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
-    }, {
-        title: 'Java Complex',
-        monthDuration: 6,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'angular', 'aws', 'docker', 'git', 'java core', 'java advanced']
-    }, {
-        title: 'Python Complex',
-        monthDuration: 6,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'angular', 'aws', 'docker', 'python core', 'python advanced']
-    }, {
-        title: 'QA Complex',
-        monthDuration: 4,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-    }, {
-        title: 'FullStack',
-        monthDuration: 7,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js', 'python', 'java']
-    }, {
-        title: 'Frontend',
-        monthDuration: 4,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
-    }];
+let coursesArray = [{
+    title: 'JavaScript Complex',
+    monthDuration: 5,
+    hourDuration: 909,
+    modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+}, {
+    title: 'Java Complex',
+    monthDuration: 6,
+    hourDuration: 909,
+    modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'angular', 'aws', 'docker', 'git', 'java core', 'java advanced']
+}, {
+    title: 'Python Complex',
+    monthDuration: 6,
+    hourDuration: 909,
+    modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'angular', 'aws', 'docker', 'python core', 'python advanced']
+}, {
+    title: 'QA Complex',
+    monthDuration: 4,
+    hourDuration: 909,
+    modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+}, {
+    title: 'FullStack',
+    monthDuration: 7,
+    hourDuration: 909,
+    modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js', 'python', 'java']
+}, {
+    title: 'Frontend',
+    monthDuration: 4,
+    hourDuration: 909,
+    modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+}];
 
 // --написати пошук всіх об'єктів, в який в modules є sass
 let cssArr = coursesArray.filter(curs => curs.modules.includes('sass'))
@@ -289,7 +287,9 @@ let symb = "о", stringi3 = "Астрономія це наука про кос�
 // document.writeln(count(str, symb)) // 5 - символів о
 const count = (string, stringsearch) => {
     let accum = 0;
-    for (const stringElement of string) {(stringElement === stringsearch) ? accum++ : accum;}
+    for (const stringElement of string) {
+        (stringElement === stringsearch) ? accum++ : accum;
+    }
     return accum;
 }
 console.log(count(stringi3, symb));

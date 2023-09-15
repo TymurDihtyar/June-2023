@@ -201,14 +201,23 @@ for (const ArrayElement of coursesArray) {
 
 // =============================================================================================================================
 
-
+// let arr = Array.from(document.querySelectorAll('.item-grid-card--show-meta'));
+// let newArr = arr.map(element => {
+//     return {
+//         title: element.querySelector('.item-grid-card__title').innerText,
+//         author: element.querySelector('.item-grid-music-preview__author').innerText,
+//         mp3: element.querySelector('audio').getAttribute('src')
+//     }
+// })
+// console.log(newArr);
 let arr = Array.from(document.querySelectorAll('.item-grid-card--show-meta'));
 let newArr = arr.map(element => {
     return {
         title: element.querySelector('.item-grid-card__title').innerText,
         author: element.querySelector('.item-grid-music-preview__author').innerText,
-        mp3: element.querySelector('audio').getAttribute('src')
+        mp3: element.getElementsByTagName('audio')[0].src
     }
 })
 console.log(newArr);
+
 
