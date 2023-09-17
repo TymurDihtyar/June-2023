@@ -43,71 +43,69 @@ let info = document.querySelector('.cards');
 let prev = document.querySelector('.prev');
 let next = document.querySelector('.next');
 
-let startIterator = 0;
-let itemOnPage = 10;
+// let startIterator = 0;
+// let itemOnPage = 10;
+//
+// function display(page) {
+//     info.innerHTML = '';
+//     for (let i = page; i < page + itemOnPage; i++) {
+//         let h1 = document.createElement('h1')
+//         h1.innerHTML = `${users[i].name} / age - ${users[i].age}  / id - ${users[i].id}`
+//         info.appendChild(h1);
+//     }
+// }
+// display(startIterator)
+// prev.onclick = function () {
+//     if (startIterator === 0) {
+//         startIterator = 0;
+//         display(startIterator)
+//     } else {
+//         startIterator -= 10;
+//         display(startIterator)
+//     }
+// }
+// next.onclick = function () {
+//     if (startIterator === 90) {
+//         startIterator = 90;
+//         display(startIterator)
+//     } else {
+//         startIterator += 10;
+//         display(startIterator)
+//     }
+// }
 
-function display(page) {
-    info.innerHTML = '';
-    for (let i = page; i < page + itemOnPage; i++) {
+let currentPage = 1;
+let itemsInPage = 10;
+
+function displayItems(page) {
+    info.innerHTML = ''
+    let startIndex = (page - 1) * itemsInPage;
+    let endIndex = startIndex + itemsInPage;
+
+    let currentMass = users.slice(startIndex, endIndex)
+    currentMass.forEach(item => {
         let h1 = document.createElement('h1')
-        h1.innerHTML = `${users[i].name} / age - ${users[i].age}  / id - ${users[i].id}`
-        info.appendChild(h1);
-    }
+        h1.innerHTML = JSON.stringify(item)  //`${item.name} / age - ${item.age}  / id - ${item.id}`
+        info.appendChild(h1)
+    })
 }
 
-display(startIterator)
+displayItems(currentPage);
 
 prev.onclick = function () {
-    if (startIterator === 0) {
-        startIterator = 0;
-        display(startIterator)
-    } else {
-        startIterator -= 10;
-        display(startIterator)
-    }
-}
-next.onclick = function () {
-    if (startIterator===90) {
-        startIterator = 90;
-        display(startIterator)
-    }else {
-        startIterator += 10;
-        display(startIterator)
+    if (currentPage > 1) {
+        currentPage--;
+        displayItems(currentPage);
     }
 }
 
-// let currentPage = 1;
-// let itemsInPage = 10;
-//
-// function displayItems(page) {
-//     info.innerHTML = ''
-//     let startIndex = (page - 1) * itemsInPage;
-//     let endIndex = startIndex + itemsInPage;
-//
-//     let currentMass = users.slice(startIndex, endIndex)
-//     currentMass.forEach(item => {
-//         let h1 = document.createElement('h1')
-//         h1.innerHTML = JSON.stringify(item)  //`${item.name} / age - ${item.age}  / id - ${item.id}`
-//         info.appendChild(h1)
-//     })
-// }
-//
-// displayItems(currentPage);
-//
-// prev.onclick = function () {
-//     if (currentPage > 1) {
-//         currentPage--;
-//         displayItems(currentPage);
-//     }
-// }
-//
-// next.onclick = function () {
-//     let totalPages = users.length / itemsInPage;
-//     if (currentPage < totalPages) {
-//         currentPage++;
-//         displayItems(currentPage);
-//     }
-// }
+next.onclick = function () {
+    let totalPages = users.length / itemsInPage;
+    if (currentPage < totalPages) {
+        currentPage++;
+        displayItems(currentPage);
+    }
+}
 
 //===============================================================================================================================================================================
 //  Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
