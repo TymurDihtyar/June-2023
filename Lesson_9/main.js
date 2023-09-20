@@ -71,7 +71,8 @@ for (const ArrayElement of coursesAndDurationArray) {
 // - є масив simpsons, котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
 // Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
 // Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
-let simpsons = [{
+let simpsons = [
+    {
     name: 'Bart',
     surname: 'Simpson',
     age: 10,
@@ -134,7 +135,8 @@ simpsons.forEach(person => {
 // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
 // ------------------
 //
-let coursesArray = [{
+let coursesArray = [
+    {
     title: 'JavaScript Complex',
     monthDuration: 5,
     hourDuration: 909,

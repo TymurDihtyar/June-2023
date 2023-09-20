@@ -2,7 +2,7 @@
 let form1 = document.forms.namedItem('in1');
 form1.onsubmit = function (e) {
     e.preventDefault();
-    document.querySelector('.target').innerHTML = `${form1.name.value} ${form1.sruname.value} ${form1.age.value}`;
+    document.querySelector('.target').innerHTML = `${this.name.value} ${this.sruname.value} ${this.age.value}`;
 }
 // let but1 = document.querySelector('.button')
 // but1.onclick = function (e) {
