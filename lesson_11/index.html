@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<div class="user"></div>
+<div class="users"></div>
 
 <script>
 
@@ -31,18 +31,110 @@
     // }, 1000)
 
 
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then(usersResponce => {
-            usersResponce.forEach(user => {
-                let div = document.querySelector('.user');
-                let h2 = document.createElement('h2');
-                h2.innerHTML = user.name;
-                let p = document.createElement('p');
-                p.innerHTML = user.phone;
-                div.append(h2, p)
-            })
-        })
+
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    //     .then(res => res.json())
+    //     .then(usersResponce => {
+    //         usersResponce.forEach(user => {
+    //             let users = document.querySelector('.users');
+    //             let div = document.createElement('div');
+    //             let h2 = document.createElement('h2');
+    //             h2.innerHTML = user.name;
+    //             let p = document.createElement('p');
+    //             p.innerHTML = user.phone;
+    //             div.append(h2, p)
+    //             users.appendChild(div)
+    //         })
+    //     })
+
+
+
+    // СИНХТОННИЙ ПРОМІС ВСЕРЕДИНІ ЯКОГО АСИНХТОННИЙ ФЕТЧ
+    // new Promise((resolve, reject) => {
+    //     fetch('https://jsonplaceholder.typicode.com/users')
+    //         .then(users => users.json())
+    //         .then(users => console.log(users))
+    //     resolve()
+    // })
+    //     .then(value => {
+    //         return new Promise((resolve, reject) => {
+    //             fetch('https://jsonplaceholder.typicode.com/comments')
+    //                 .then(postsOfUser => postsOfUser.json())
+    //                 .then(postsOfUser => console.log(postsOfUser))
+    //             resolve()
+    //         })
+    //     })
+    //     .then(value => {
+    //         return new Promise((resolve, reject) => {
+    //             fetch('https://jsonplaceholder.typicode.com/users')
+    //                 .then(users => users.json())
+    //                 .then(users => console.log(users))
+    //             resolve()
+    //         })
+    //     })
+    //     .then(value => {
+    //         fetch('https://jsonplaceholder.typicode.com/comments')
+    //             .then(postsOfUser => postsOfUser.json())
+    //             .then(postsOfUser => console.log(postsOfUser))
+    //     })
+
+
+
+    // let fetch1 = fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json())
+    // let fetch2 = fetch('https://jsonplaceholder.typicode.com/posts').then(value => value.json())
+    // let fetch3 = fetch('https://jsonplaceholder.typicode.com/comments').then(value => value.json())
+    // Promise.all([fetch1, fetch2, fetch3])
+    //     .then(value => {
+    //         let resp1 = value[0];
+    //         console.log(resp1);
+    //         let resp2 = value[1];
+    //         console.log(resp2);
+    //         let resp3 = value[2];
+    //         console.log(resp3);
+    //     })
+
+
+
+    // async function fetchData(url) {
+    //     const response = await fetch(url);
+    //     const data = await response.json();
+    //     return data;
+    // }
+    //
+    // async function fetchUsersAndComments() {
+    //     try {
+    //         const users = await fetchData('https://jsonplaceholder.typicode.com/users');
+    //         console.log(users);
+    //
+    //         const comments = await fetchData('https://jsonplaceholder.typicode.com/comments');
+    //         console.log(comments);
+    //
+    //         // Щоб відобразити користувачів та коментарі, робіть з ними, що потрібно тут.
+    //
+    //     } catch (error) {
+    //         console.error('Сталася помилка:', error);
+    //     }
+    // }
+    //
+    // fetchUsersAndComments();
+
+
+
+    // Виклик ФЕТЧА З РЕТЬОРНОМ НА НОВИЙ ФЕТЧ
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    //     .then(responseUsers => responseUsers.json())
+    //     .then(users => {
+    //         console.log(users);
+    //         return fetch('https://jsonplaceholder.typicode.com/posts')
+    //     })
+    //     .then(responsePosts => responsePosts.json())
+    //     .then(posts => {
+    //         console.log(posts);
+    //         return fetch('https://jsonplaceholder.typicode.com/comments')
+    //     })
+    //     .then(responseComments => responseComments.json())
+    //     .then(comments => console.log(comments));
+
 
 
 </script>
