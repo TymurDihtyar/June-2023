@@ -30,5 +30,5 @@ async function renderUser () {
     fillElement('.bs', user.company.bs);
 }
 
-renderUser ()
+renderUser ();
 
