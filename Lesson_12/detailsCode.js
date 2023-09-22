@@ -1,24 +1,34 @@
+let url = new URL(location.href);
+let data = JSON.parse(url.searchParams.get('data'));
+
 function fillElement(className, text) {
     const element = document.querySelector(className);
     element.innerHTML += text;
 }
 
-let url = new URL(location.href);
-let data = JSON.parse(url.searchParams.get('data'));
-console.log(data);
+async function getUser() {
+    const result = await fetch('https://jsonplaceholder.typicode.com/users/'+ data);
+    return result.json();
+}
 
-fillElement('.id', data.id);
-fillElement('.name', data.name);
-fillElement('.username', data.username);
-fillElement('.email', data.email);
-fillElement('.street', data.address.street);
-fillElement('.suite', data.address.suite);
-fillElement('.city', data.address.city);
-fillElement('.zipcode', data.address.zipcode);
-fillElement('.lat', data.address.geo.lat);
-fillElement('.lng', data.address.geo.lng);
-fillElement('.phone', data.phone);
-fillElement('.website', data.website);
-fillElement('.company_name', data.company.name);
-fillElement('.catchPhrase', data.company.catchPhrase);
-fillElement('.bs', data.company.bs);
+async function renderUser () {
+    const user = await getUser();
+    fillElement('.id', user.id);
+    fillElement('.name', user.name);
+    fillElement('.username', user.username);
+    fillElement('.email', user.email);
+    fillElement('.street', user.address.street);
+    fillElement('.suite', user.address.suite);
+    fillElement('.city', user.address.city);
+    fillElement('.zipcode', user.address.zipcode);
+    fillElement('.lat', user.address.geo.lat);
+    fillElement('.lng', user.address.geo.lng);
+    fillElement('.phone', user.phone);
+    fillElement('.website', user.website);
+    fillElement('.company_name', user.company.name);
+    fillElement('.catchPhrase', user.company.catchPhrase);
+    fillElement('.bs', user.company.bs);
+}
+
+renderUser ()
+

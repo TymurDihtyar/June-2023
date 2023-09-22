@@ -16,7 +16,7 @@ async function renderList() {
         li.classList.add('userLi');
         const a = document.createElement('a');
         a.innerHTML = `${user.id}. ${user.name} <hr>`;
-        a.href = 'details.html?data=' + JSON.stringify(user);
+        a.href = 'details.html?data=' + JSON.stringify(user.id);
         li.appendChild(a);
         ul.appendChild(li);
     })
