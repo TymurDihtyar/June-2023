@@ -1,0 +1,184 @@
+/* Стилизація проєкта -*/
+/* index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.*/
+/* user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.*/
+/* блоки з короткою іфною про post - в ряд по 5 .*/
+/* post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
+/* Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)*/
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    background-color: #d0d9de;
+    font-family: monospace;
+    font-size: 35px;
+    font-weight: bold;
+    overflow-X: hidden;
+}
+
+h1 {
+    background: linear-gradient(152deg, #bf8d39 0%, #000 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.render {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vh;
+    box-sizing: border-box;
+    padding-bottom: 3vh;
+}
+
+.userBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 14vh;
+    width: 40vw;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1vh 1vh 1vh black;
+    background: linear-gradient(152deg, #e4d5ef 0%, #000 100%);
+}
+
+.userData {
+    font-family: monospace;
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.5s;
+    box-sizing: border-box;
+    color: white;
+}
+
+.userBut {
+    font-family: monospace;
+    font-size: 25px;
+    margin: 20px 0 0 0;
+    border-radius: 10px;
+    transition: 0.5s;
+    border: none;
+    box-shadow: 1vh 1vh 1vh black;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(152deg, #f3f1f6 0%, #000 100%);
+}
+
+.userBut:hover {
+    background: linear-gradient(152deg, #bf8d39 0%, #000 100%);
+    color: white;
+    transform: translateY(-0.7vh);
+    transition: 0.5s;
+}
+
+/*=======================================================================*/
+.renderDetails {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5vh;
+    box-sizing: border-box;
+    padding-bottom: 2.5vh;
+}
+
+.userDetails, .renderPost {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    color: white;
+    width: 90%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 1vh 1vh 1vh black;
+    background: linear-gradient(152deg, #e4d5ef 0%, #000 100%);
+}
+
+.userDetails div, .renderPost div {
+    padding-left: 70px;
+    font-family: monospace;
+    font-size: 25px;
+}
+
+.posts {
+    width: 90%;
+    height: 60px;
+}
+
+.renderPosts {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2vh;
+}
+
+.divPost {
+    /*height: 10vh;*/
+    width: 16vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1vh 1vh 1vh black;
+    background: linear-gradient(152deg, #e4d5ef 0%, #000 100%);
+    color: white;
+    /*transition: 2s;*/
+}
+
+h6 {
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 12vw;
+}
+
+/*=======================================================================*/
+
+.renderComments{
+    margin-top: 3vh;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 2vh;
+}
+
+.comDiv {
+    /*height: 30vh;*/
+    font-size: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    color: white;
+    width: 21vw;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 1vh 1vh 1vh black;
+    background: linear-gradient(152deg, #e4d5ef 0%, #000 100%);
+}

@@ -7,11 +7,11 @@ function fillElement(className, text) {
 }
 
 async function getUser() {
-    const result = await fetch('https://jsonplaceholder.typicode.com/users/'+ data);
+    const result = await fetch('https://jsonplaceholder.typicode.com/users/' + data);
     return result.json();
 }
 
-async function renderUser () {
+async function renderUser() {
     const user = await getUser();
     fillElement('.id', user.id);
     fillElement('.name', user.name);
@@ -30,5 +30,32 @@ async function renderUser () {
     fillElement('.bs', user.company.bs);
 }
 
-renderUser ();
+renderUser();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
