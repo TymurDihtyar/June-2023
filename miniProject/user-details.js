@@ -55,10 +55,12 @@ async function renderPosts() {
     postsBut.addEventListener('click', () => {
         let renderPosts = document.querySelector('.renderPosts');
         if (!click) {
+            renderPosts.innerHTML = '';
             posts.forEach(post => {
                 let divPost = document.createElement('div');
                 let title = document.createElement('h6');
                 let postBut = document.createElement('button');
+                divPost.classList.add('show-post');
 
                 title.innerHTML = post.title;
                 postBut.innerHTML = `Details`;
@@ -69,11 +71,14 @@ async function renderPosts() {
                 renderPosts.appendChild(divPost);
 
                 postBut.addEventListener("click", () => {
-                    location.href = `post-details.html?postId=${post.id}`;
+                    location.href = `post-details.html?postId=${post.id}&userId=${id}`;
                 })
             })
         } else {
-            renderPosts.innerHTML = '';
+            let divPosts = document.querySelectorAll('.divPost');
+            divPosts.forEach((divPost) => {
+                divPost.classList.remove('show-post');
+            });
         }
         click = !click;
     })
@@ -81,3 +86,8 @@ async function renderPosts() {
 }
 
 renderPosts();
+
+let butPrev = document.querySelector('.prev');
+butPrev.addEventListener('click', () => {
+    window.location.href = 'index.html';
+})

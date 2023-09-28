@@ -3,17 +3,17 @@
 // 8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 
 const url = 'https://jsonplaceholder.typicode.com/posts/';
-const id = new URL(location.href).searchParams.get('postId');
+const postId = new URL(location.href).searchParams.get('postId');
 
 //Створюємо запит на конкретний пост юзера
 async function getPost() {
-    let result = await fetch(url + id);
+    let result = await fetch(url + postId);
     return result.json();
 }
 
 //Створюємо запит на коментарі до поста юзера
 async function getComments() {
-    let result = await fetch(url + id + '/comments');
+    let result = await fetch(url + postId + '/comments');
     return result.json();
 }
 
@@ -49,5 +49,8 @@ async function renderComments() {
 renderPost();
 renderComments()
 
-
-
+const userId = new URL(location.href).searchParams.get('userId');
+let butPrev = document.querySelector('.prev');
+butPrev.addEventListener('click', () => {
+    window.location.href = `user-details.html?id=${userId}`;
+})
