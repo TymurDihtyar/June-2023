@@ -13,6 +13,12 @@ async function getUser() {
     return result.json();
 }
 
+//Створюємо запит пости юзера
+async function getPosts() {
+    let result = await fetch(url + id + '/posts');
+    return result.json();
+}
+
 //Створюємо фунцію рендеру даних юзера
 async function renderUser() {
     let user = await getUser();
@@ -34,16 +40,7 @@ function createUser(obj, tag) {
             createUser(obj[key], div);
             tag.append(div);
         }
-
     }
-}
-
-renderUser();
-
-//Створюємо запит пости юзера
-async function getPosts() {
-    let result = await fetch(url + id + '/posts');
-    return result.json();
 }
 
 //Створюємо фунцію рендеру даних постів
@@ -51,42 +48,44 @@ async function renderPosts() {
     let posts = await getPosts();
     let postsBut = document.querySelector('.posts')
     let click = false;
+    let renderPosts = document.querySelector('.renderPosts');
 
+    //Створюємо пости але не показуємо їх
+    posts.forEach(post => {
+        let divPost = document.createElement('div');
+        let title = document.createElement('h6');
+        let postBut = document.createElement('button');
+
+        title.innerHTML = post.title;
+        postBut.innerHTML = `Details`;
+        postBut.classList.add('userBut');
+        divPost.classList.add('divPost');
+
+        divPost.append(title, postBut);
+        renderPosts.appendChild(divPost);
+
+        postBut.addEventListener("click", () => {
+            location.href = `post-details.html?postId=${post.id}&userId=${id}`;
+        })
+    })
+
+    //При натисканні на кнопку плавно вививодимо або приховуємо пости на сторінці
     postsBut.addEventListener('click', () => {
-        let renderPosts = document.querySelector('.renderPosts');
         if (!click) {
-            renderPosts.innerHTML = '';
-            posts.forEach(post => {
-                let divPost = document.createElement('div');
-                let title = document.createElement('h6');
-                let postBut = document.createElement('button');
-                divPost.classList.add('show-post');
-
-                title.innerHTML = post.title;
-                postBut.innerHTML = `Details`;
-                postBut.classList.add('userBut');
-                divPost.classList.add('divPost');
-
-                divPost.append(title, postBut);
-                renderPosts.appendChild(divPost);
-
-                postBut.addEventListener("click", () => {
-                    location.href = `post-details.html?postId=${post.id}&userId=${id}`;
-                })
-            })
+            renderPosts.classList.add('show-post');
         } else {
-            let divPosts = document.querySelectorAll('.divPost');
-            divPosts.forEach((divPost) => {
-                divPost.classList.remove('show-post');
-            });
+            renderPosts.classList.remove('show-post');
         }
         click = !click;
     })
 
 }
 
+//Виклик асинхронних функцій
+renderUser();
 renderPosts();
 
+//Додаємо кнопку повернення на попередню сторінку
 let butPrev = document.querySelector('.prev');
 butPrev.addEventListener('click', () => {
     window.location.href = 'index.html';

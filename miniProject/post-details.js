@@ -46,9 +46,11 @@ async function renderComments() {
 
 }
 
+//Виклик асинхронних функцій
 renderPost();
 renderComments()
 
+//Додаємо кнопку повернення на попередню сторінку
 const userId = new URL(location.href).searchParams.get('userId');
 let butPrev = document.querySelector('.prev');
 butPrev.addEventListener('click', () => {

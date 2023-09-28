@@ -130,10 +130,11 @@ h1 {
     flex-wrap: wrap;
     gap: 2vh;
     width: 90%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .divPost {
-    /*height: 10vh;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,14 +147,10 @@ h1 {
     background: linear-gradient(152deg, #e4d5ef 0%, #000 100%);
     color: white;
     width: 16vw;
-    /*transition: 2s;*/
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .show-post {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 h6 {
