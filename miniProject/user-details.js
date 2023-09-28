@@ -31,12 +31,12 @@ function createUser(obj, tag) {
     for (const key in obj) {
         if (typeof obj[key] !== 'object') {
             let keyDiv = document.createElement('div');
-            keyDiv.innerHTML = `${key.toUpperCase().fontcolor('#724c15')}: ${obj[key]}`
+            keyDiv.innerHTML = `${key.toUpperCase().fontcolor('#383638')}: ${obj[key]}`
             tag.append(keyDiv);
         } else {
             let div = document.createElement('div');
             div.classList.add('sub');
-            div.innerHTML = key.toUpperCase().fontcolor('#724c15');
+            div.innerHTML = key.toUpperCase().fontcolor('#383638');
             createUser(obj[key], div);
             tag.append(div);
         }

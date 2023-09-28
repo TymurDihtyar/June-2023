@@ -21,7 +21,7 @@ async function getComments() {
 function createBlock(mass, tag) {
     for (const key in mass) {
         let keyDiv = document.createElement('div');
-        keyDiv.innerHTML = `${key.toUpperCase().fontcolor('#724c15')}: ${mass[key]}`
+        keyDiv.innerHTML = `${key.toUpperCase().fontcolor('#383638')}: ${mass[key]}`
         tag.append(keyDiv);
     }
 }
