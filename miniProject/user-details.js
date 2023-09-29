@@ -71,14 +71,9 @@ async function renderPosts() {
 
     //При натисканні на кнопку плавно вививодимо або приховуємо пости на сторінці
     postsBut.addEventListener('click', () => {
-        if (!click) {
-            renderPosts.classList.add('show-post');
-        } else {
-            renderPosts.classList.remove('show-post');
-        }
+       (!click) ? renderPosts.classList.add('show-post') : renderPosts.classList.remove('show-post');
         click = !click;
     })
-
 }
 
 //Виклик асинхронних функцій
