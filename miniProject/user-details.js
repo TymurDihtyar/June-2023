@@ -6,23 +6,41 @@
 
 const url = 'https://jsonplaceholder.typicode.com/users/';
 const id = new URL(location.href).searchParams.get('id');
+let userDetails = document.querySelector('.userDetails');
+let renderPosts = document.querySelector('.renderPosts');
 
 //Створюємо запит на конкретного юзера
 async function getUser() {
-    let result = await fetch(url + id);
-    return result.json();
+    try {
+        let result = await fetch(url + id);
+        return result.json();
+    } catch (error) {
+        userDetails.innerHTML = 'Lost connection with server';
+        console.log(error);
+    }
 }
 
 //Створюємо запит пости юзера
 async function getPosts() {
-    let result = await fetch(url + id + '/posts');
-    return result.json();
+    try {
+        let result = await fetch(url + id + '/posts');
+        return result.json();
+    } catch (error) {
+        renderPosts.innerHTML = 'Lost connection with server';
+        console.log(error);
+        renderPosts.classList.add('show-post');
+        // let postsBut = document.querySelector('.posts')
+        // let click = false;
+        // postsBut.addEventListener('click', () => {
+        //     (!click) ? renderPosts.classList.add('show-post') : renderPosts.classList.remove('show-post');
+        //     click = !click;
+        // })
+    }
 }
 
 //Створюємо фунцію рендеру даних юзера
 async function renderUser() {
     let user = await getUser();
-    let userDetails = document.querySelector('.userDetails');
     createUser(user, userDetails)
 }
 
@@ -44,11 +62,10 @@ function createUser(obj, tag) {
 }
 
 //Створюємо фунцію рендеру даних постів
-async function renderPosts() {
+async function renderAllPosts() {
     let posts = await getPosts();
     let postsBut = document.querySelector('.posts')
     let click = false;
-    let renderPosts = document.querySelector('.renderPosts');
 
     //Створюємо пости але не показуємо їх
     posts.forEach(post => {
@@ -71,14 +88,14 @@ async function renderPosts() {
 
     //При натисканні на кнопку плавно вививодимо або приховуємо пости на сторінці
     postsBut.addEventListener('click', () => {
-       (!click) ? renderPosts.classList.add('show-post') : renderPosts.classList.remove('show-post');
+        (!click) ? renderPosts.classList.add('show-post') : renderPosts.classList.remove('show-post');
         click = !click;
     })
 }
 
 //Виклик асинхронних функцій
 renderUser();
-renderPosts();
+renderAllPosts();
 
 //Додаємо кнопку повернення на попередню сторінку
 let butPrev = document.querySelector('.prev');

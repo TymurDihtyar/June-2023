@@ -4,17 +4,29 @@
 
 const url = 'https://jsonplaceholder.typicode.com/posts/';
 const postId = new URL(location.href).searchParams.get('postId');
+let renderPost = document.querySelector('.renderPost');
+let renderComments = document.querySelector('.renderComments');
 
 //Створюємо запит на конкретний пост юзера
 async function getPost() {
-    let result = await fetch(url + postId);
-    return result.json();
+    try {
+        let result = await fetch(url + postId);
+        return result.json();
+    } catch (error) {
+        renderPost.innerHTML = 'Lost connection with server';
+        console.log(error);
+    }
 }
 
 //Створюємо запит на коментарі до поста юзера
 async function getComments() {
-    let result = await fetch(url + postId + '/comments');
-    return result.json();
+    try {
+        let result = await fetch(url + postId + '/comments');
+        return result.json();
+    } catch (error) {
+        renderComments.innerHTML = 'Lost connection with server';
+        console.log(error);
+    }
 }
 
 //Створюємо функцію для створення блоку поста чи коментара юзера
@@ -27,14 +39,14 @@ function createBlock(mass, tag) {
 }
 
 //Створюємо функцію рендер конкретниого поста юзера
-async function renderPost() {
+async function renderAllPost() {
     let post = await getPost();
     let renderPost = document.querySelector('.renderPost');
     createBlock(post, renderPost);
 }
 
 //Створюємо функцію рендер коментарів поста юзера
-async function renderComments() {
+async function renderAllComments() {
     let comments = await getComments();
     let renderComments = document.querySelector('.renderComments');
     for (const comment of comments) {
@@ -43,12 +55,11 @@ async function renderComments() {
         createBlock(comment, comDiv);
         renderComments.append(comDiv)
     }
-
 }
 
 //Виклик асинхронних функцій
-renderPost();
-renderComments()
+renderAllPost();
+renderAllComments()
 
 //Додаємо кнопку повернення на попередню сторінку
 const userId = new URL(location.href).searchParams.get('userId');
